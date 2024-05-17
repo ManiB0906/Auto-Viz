@@ -16,6 +16,6 @@ if prompt:
     with st.chat_message("human"):
         st.write(prompt)
     with st.chat_message("ai"):
-        # st.write("Here is your answer")
-        # st.line_chart(np.random.randn(30, 3))
-        st.write_stream(stream_data(text))
+        st.write("Here is your answer")
+        st.line_chart(np.random.randn(30, 3))
+        # st.write_stream(stream_data(text))
