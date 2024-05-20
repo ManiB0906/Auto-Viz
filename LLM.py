@@ -16,6 +16,24 @@ if prompt:
     with st.chat_message("human"):
         st.write(prompt)
     with st.chat_message("ai"):
-        st.write("Here is your answer")
+        st.write("Chart")
         st.line_chart(np.random.randn(30, 3))
-        # st.write_stream(stream_data(text))
+    with st.chat_message("ai"):
+        st.write("Text")
+        st.write_stream(stream_data(text))
+    with st.chat_message("ai"):
+        st.write("KPI")
+        st.metric("Sample", 100)
+    with st.chat_message("ai"):
+        st.write("Table")
+        df = pd.DataFrame(
+            {
+                "Col1": [1, 2],
+                "Col2": [100, 200]
+            }
+        )
+        st.dataframe(
+            df,
+            use_container_width=True,
+            hide_index=True,
+        )
