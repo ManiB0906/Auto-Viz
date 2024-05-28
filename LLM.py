@@ -37,3 +37,10 @@ if prompt:
             use_container_width=True,
             hide_index=True,
         )
+    with st.chat_message("ai"):
+        st.write("HTML")
+        html_content = """
+        <h1 style='color: blue;'>Hello, Streamlit!</h1>
+        <p>This is a paragraph of text in Streamlit rendered using HTML.</p>
+        """
+        st.markdown(html_content, unsafe_allow_html=True)
